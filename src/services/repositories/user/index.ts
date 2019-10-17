@@ -1,5 +1,6 @@
 import { UserModel } from '../../../schemas';
 import User from '../../../models/user';
+import { toObject } from '../shared/utils';
 
 
 export const getUserByEmail = async (email: string): Promise<User | null> => {
@@ -7,7 +8,7 @@ export const getUserByEmail = async (email: string): Promise<User | null> => {
     if (!user) {
         return null;
     }
-    return user.toObject() as User;
+    return toObject<User>(user);
 };
 
 export const addUser = async (user: User): Promise<void> => {

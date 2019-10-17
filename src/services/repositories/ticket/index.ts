@@ -1,13 +1,13 @@
 import { TicketModel } from '../../../schemas';
 import Ticket from '../../../models/ticket';
-
+import { toObject } from '../shared/utils';
 
 export const getTicketsByEmail = async (email: string): Promise<Ticket[]> => {
     const tickets = await TicketModel.find({ email });
     if (!tickets) {
         return [];
     }
-    return tickets.map((ticket) => ticket.toObject()) as Ticket[];
+    return tickets.map((ticket) => toObject<Ticket>(ticket));
 };
 
 export const getTicketByEmailAndTripId = async (
@@ -17,7 +17,7 @@ export const getTicketByEmailAndTripId = async (
     if (!ticket) {
         return null;
     }
-    return ticket.toObject() as Ticket;
+    return toObject<Ticket>(ticket);
 };
 
 export const addTicket = async (ticket: Ticket): Promise<void> => {

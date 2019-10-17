@@ -1,5 +1,6 @@
 import { TripModel } from '../../../schemas';
 import Trip from '../../../models/trip';
+import { toObject } from '../shared/utils';
 
 
 export const getTripById = async (id: number): Promise<Trip | null> => {
@@ -7,7 +8,15 @@ export const getTripById = async (id: number): Promise<Trip | null> => {
     if (!trip) {
         return null;
     }
-    return trip.toObject() as Trip;
+    return toObject<Trip>(trip);
+};
+
+export const getAllAvailableTrips = async (): Promise<Trip[]> => {
+    const trips = await TripModel.find({startDate: {$gt: new Date()}});
+    if (!trips) {
+        return [];
+    }
+    return trips.map((trip) => toObject<Trip>(trip));
 };
 
 export const addTrip = async (trip: Trip): Promise<void> => {
