@@ -1,13 +1,10 @@
 import { Schema } from 'mongoose';
 
 export default new Schema({
-    date: {
-        type: Date,
-    },
-    order: {
+    tripId: {
         type: Number,
     },
-    destination: {
+    email: {
         type: String,
     },
 });

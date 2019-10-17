@@ -28,6 +28,9 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     'no-unused-vars': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
-    'import/no-unresolved': 'off'
+    'import/no-unresolved': 'off',
+    'implicit-arrow-linebreak': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    'semi': 'off',
     }
 }
