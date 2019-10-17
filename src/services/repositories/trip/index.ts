@@ -12,7 +12,7 @@ export const getTripById = async (id: number): Promise<Trip | null> => {
 };
 
 export const getAllAvailableTrips = async (): Promise<Trip[]> => {
-    const trips = await TripModel.find({startDate: {$gt: new Date()}});
+    const trips = await TripModel.find({ startDate: { $gt: new Date() } });
     if (!trips) {
         return [];
     }
