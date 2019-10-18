@@ -1,4 +1,4 @@
-import { TicketModel } from '../../../schemas';
+import { TicketModel } from '../schemas';
 import Ticket from '../../../models/ticket';
 import { toObject } from '../shared/utils';
 

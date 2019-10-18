@@ -1,4 +1,4 @@
-import { UserModel } from '../../../schemas';
+import { UserModel } from '../schemas';
 import User from '../../../models/user';
 import { toObject } from '../shared/utils';
 

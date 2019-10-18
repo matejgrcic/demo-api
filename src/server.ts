@@ -1,7 +1,6 @@
 import http from 'http';
 import app from './app';
-
-const port = '1950';
+import config from './config'
 
 const server = http.createServer(app);
-server.listen(port);
+server.listen(config.app.port);

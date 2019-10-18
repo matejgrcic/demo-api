@@ -1,4 +1,4 @@
-import { TripModel } from '../../../schemas';
+import { TripModel } from '../schemas';
 import Trip from '../../../models/trip';
 import { toObject } from '../shared/utils';
 
