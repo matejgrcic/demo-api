@@ -24,3 +24,7 @@ export const addTicket = async (ticket: Ticket): Promise<void> => {
     const document = new TicketModel(ticket);
     await document.save();
 };
+
+export const removeTicket = async (ticket: Ticket): Promise<void> => {
+    await TicketModel.findOneAndDelete(ticket);
+};

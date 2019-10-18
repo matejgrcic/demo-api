@@ -1,5 +1,5 @@
 import { getUserByEmail } from '../../services/repositories/user';
-import { createLoginToken } from '../../services/util/authorisation';
+import { createLoginToken } from '../../services/util/authorization';
 
 
 export default async (email: string, password: string): Promise<string> => {
