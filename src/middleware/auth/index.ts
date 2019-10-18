@@ -17,10 +17,12 @@ export default (hasPrivileges: (payload: any, params: any) => Promise<boolean>) 
             const tokenPayload = decodeToken(token);
             if (await hasPrivileges(tokenPayload, params)) {
                 next();
+                return;
             } else {
                 resp.sendStatus(HttpStatus.UNAUTHORIZED);
                 return;
             }
+        } else {
+            resp.sendStatus(HttpStatus.FORBIDDEN);
         }
-        resp.sendStatus(HttpStatus.FORBIDDEN);
     }

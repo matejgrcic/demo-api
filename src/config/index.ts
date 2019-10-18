@@ -8,4 +8,7 @@ export default {
         jwtSecretKey: 'demoAppKey',
         tokenDuration: '24h',
     },
+    businessRules: {
+        ticketCancelPeriod: 1,
+    }
 };
