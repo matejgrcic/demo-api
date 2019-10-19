@@ -4,7 +4,7 @@ import _registerUser from '../../usecases/user/regusterUser';
 import _loginUser from '../../usecases/user/loginUser';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
 import _fetchPurchasedTickets from '../../usecases/user/fetchPurchasedTickets';
-import createErrorDescription from '../utils';
+import createErrorDescription from '../../utils';
 
 export const registerUser = async (req: Request, res: Response) => {
     const {

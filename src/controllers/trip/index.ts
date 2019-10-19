@@ -4,7 +4,7 @@ import _fetchTrips from '../../usecases/trip/fetchTrips';
 import _buyTicket from '../../usecases/ticket/buyTicket';
 import _cancelTicket from '../../usecases/ticket/cancelTicket';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
-import createErrorDescription from '../utils';
+import createErrorDescription from '../../utils';
 
 // eslint-disable-next-line import/prefer-default-export
 export const getAllTrips = async (_: express.Request, res: express.Response) => {
