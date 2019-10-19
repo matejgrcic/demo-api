@@ -1,8 +1,8 @@
 import * as express from 'express';
 import HttpStatus from 'http-status-codes';
 import _fetchTrips from '../../usecases/trip/fetchTrips';
-import _buyTicket from '../../usecases/ticket/buyTicket';
-import _cancelTicket from '../../usecases/ticket/cancelTicket';
+import _buyTicket from '../../usecases/trip/buyTicket';
+import _cancelTicket from '../../usecases/trip/cancelTicket';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
 import createErrorDescription from '../../utils';
 

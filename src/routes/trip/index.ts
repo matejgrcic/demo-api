@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getAllTrips, buyTicket, cancelTicket } from '../../controllers/trip';
 import asyncWrap from '../shared/asyncWrapper';
 import authMiddleware from '../../middleware/auth';
-import canUserCancelTicket from '../../usecases/ticket/canUserCancelTicket'
+import canUserCancelTicket from '../../usecases/trip/canUserCancelTicket'
 
 const router = Router();
 
