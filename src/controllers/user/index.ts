@@ -4,6 +4,7 @@ import _registerUser from '../../usecases/user/regusterUser';
 import _loginUser from '../../usecases/user/loginUser';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
 import _fetchPurchasedTickets from '../../usecases/user/fetchPurchasedTickets';
+import createErrorDescription from '../utils';
 
 export const registerUser = async (req: Request, res: Response) => {
     const {
@@ -24,7 +25,7 @@ export const registerUser = async (req: Request, res: Response) => {
         res.sendStatus(HttpStatus.OK);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(error);
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
 
@@ -39,7 +40,7 @@ export const loginUser = async (req: Request, res: Response) => {
         res.status(HttpStatus.OK).json(token);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(JSON.stringify(error));
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
 
@@ -57,6 +58,6 @@ export const showUsersTickets = async (req: Request, res: Response) => {
         res.status(HttpStatus.OK).json(tickets);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(error);
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };

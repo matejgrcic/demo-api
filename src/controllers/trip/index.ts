@@ -4,6 +4,7 @@ import _fetchTrips from '../../usecases/trip/fetchTrips';
 import _buyTicket from '../../usecases/ticket/buyTicket';
 import _cancelTicket from '../../usecases/ticket/cancelTicket';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
+import createErrorDescription from '../utils';
 
 // eslint-disable-next-line import/prefer-default-export
 export const getAllTrips = async (_: express.Request, res: express.Response) => {
@@ -12,7 +13,7 @@ export const getAllTrips = async (_: express.Request, res: express.Response) => 
         res.status(HttpStatus.OK).json(tickets);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(error);
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
 
@@ -31,7 +32,7 @@ export const buyTicket = async (req: express.Request, res: express.Response) => 
         res.sendStatus(HttpStatus.OK);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(error);
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
 
@@ -48,6 +49,6 @@ export const cancelTicket = async (req: express.Request, res: express.Response) 
         res.sendStatus(HttpStatus.OK);
         return;
     } catch (error) {
-        res.status(HttpStatus.BAD_REQUEST).json(error);
+        res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
