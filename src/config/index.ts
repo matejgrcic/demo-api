@@ -10,5 +10,5 @@ export default {
     },
     businessRules: {
         ticketCancelPeriod: 1,
-    }
+    },
 };

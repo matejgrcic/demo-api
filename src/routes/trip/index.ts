@@ -6,7 +6,7 @@ import canUserCancelTicket from '../../usecases/ticket/canUserCancelTicket'
 
 const router = Router();
 
-const canCancelTicket = async (payload: any, params: any): Promise<boolean> =>
+const canCancelTicket = (payload: any, params: any): Promise<boolean> =>
     canUserCancelTicket(payload.email, params.id);
 
 const canBuyTicket = async (payload: any, params: any): Promise<boolean> =>

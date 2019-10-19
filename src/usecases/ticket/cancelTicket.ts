@@ -6,7 +6,7 @@ import { UpdateCapacity } from './shared';
 
 const isTicketCancelable = (tripDate: Date): boolean =>
     moment(tripDate)
-        .subtract(config.businessRules.ticketCancelPeriod,'hour').isBefore(moment())
+        .subtract(config.businessRules.ticketCancelPeriod, 'hour').isBefore(moment());
 
 export default async (tripId: number, email: string) => {
     const trip = await getTripById(tripId);

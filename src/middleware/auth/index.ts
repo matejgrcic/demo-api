@@ -8,21 +8,23 @@ const extractTokenFromHeader = (authHeader: string) => authHeader.split(' ')[1];
 
 const decodeToken = (token: string) => verifyLoginToken(token);
 
+const getToken = (authHeader: string) => {
+    const token = extractTokenFromHeader(authHeader);
+    return decodeToken(token);
+}
+
 export default (hasPrivileges: (payload: any, params: any) => Promise<boolean>) =>
     async (req: Request, resp: Response, next: NextFunction) => {
         const { authorization } = req.headers;
         const { params } = req;
         if (authorization && checkIsBearerToken(authorization)) {
-            const token = extractTokenFromHeader(authorization);
-            const tokenPayload = decodeToken(token);
+            const tokenPayload = getToken(authorization);
             if (await hasPrivileges(tokenPayload, params)) {
                 next();
                 return;
-            } else {
-                resp.sendStatus(HttpStatus.UNAUTHORIZED);
-                return;
             }
-        } else {
-            resp.sendStatus(HttpStatus.FORBIDDEN);
+            resp.sendStatus(HttpStatus.BAD_REQUEST);
+            return;
         }
+        resp.sendStatus(HttpStatus.FORBIDDEN);
     }

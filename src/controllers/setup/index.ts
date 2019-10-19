@@ -8,7 +8,7 @@ export const setupDevDatabase = (_: express.Request, res: express.Response) => {
     try {
         setupDevDb();
         res.sendStatus(HttpStatus.OK);
-    } catch(error) {
+    } catch (error) {
         res.status(HttpStatus.BAD_REQUEST).json(createErrorDescription(error));
     }
 };
