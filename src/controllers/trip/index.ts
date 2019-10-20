@@ -6,7 +6,6 @@ import _cancelTicket from '../../usecases/trip/cancelTicket';
 import _extractUserFromToken from '../../usecases/shared/extractUserFromToken';
 import createErrorDescription from '../../utils';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getAllTrips = async (_: express.Request, res: express.Response) => {
     try {
         const tickets = await _fetchTrips();
