@@ -5,7 +5,8 @@
 * MongoDB
 
 ## Setup
-1. start MongoDB with `demo-api-db` database
+1. start MongoDB
+2. crate `demo-api-db` database
 2. run `npm i`
 3. run `npm run dev`
 
