@@ -20,5 +20,6 @@
 * Add more tests
 * Dockerize app
 * Use .env file for configuration
+* Improve security
 
 
