@@ -15,8 +15,8 @@
 * `POST localhost:1950/api/user/login` - Login user
 * `POST localhost:1950/api/user/register` - Register user
 * `GET localhost:1950/api/trips` - Available trips
-* `POST localhost:1950/api/trips/3/buy` - Buy ticket
-* `POST localhost:1950/api/trips/3/cancel` - Cancel ticket
+* `POST localhost:1950/api/trips/{id}/buy` - Buy ticket for trip with id
+* `POST localhost:1950/api/trips/{id}/cancel` - Cancel ticket for trip with id
 * `GET localhost:1950/api/user/tickets` - User's tickets
 
 **Note:** If requested, Postman collection can be provided.
