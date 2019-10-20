@@ -4,6 +4,11 @@
 * Node.js
 * MongoDB
 
+## Setup
+1. start MongoDB with `demo-api-db` database
+2. run `npm i`
+3. run `npm run dev`
+
 ## End-points
 *  `GET localhost:1950/api/setup` - DB setup
 * `POST localhost:1950/api/user/login` - Login user
