@@ -11,7 +11,7 @@
         "dev": "npm run build && npm run start-dev",
         "serve-dev": "nodemon --inspect build/server.js",
         "start-dev": "concurrently \"npm run watch\" \"npm run serve-dev\"",
-        "test": "ts-mocha tests/**/*.spec.ts"
+        "test": "ts-mocha src/**/*.spec.ts"
     },
     "dependencies": {
         "axios": "^0.19.0",

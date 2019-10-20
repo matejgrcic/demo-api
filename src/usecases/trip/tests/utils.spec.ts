@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import moment from 'moment';
-import { isTicketCancelable } from '../../../src/usecases/trip/utils';
+import { isTicketCancelable } from '../utils';
 
 describe('Trip usecases utils', () => {
     describe('isTicketCancelable', () => {

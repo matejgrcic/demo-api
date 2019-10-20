@@ -24,5 +24,5 @@ const saveTripToDb = (trip: Trip) => addTrip(trip);
 
 export default () => {
     ['abc@foo.com', 'aaa@foo.com', 'bar@foo.com'].map(createUser).forEach(saveUserToDb);
-    [1, 2, 3].map(createTrip).forEach(saveTripToDb);
+    [1, 3].map(createTrip).forEach(saveTripToDb);
 };
