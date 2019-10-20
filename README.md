@@ -10,7 +10,7 @@
 2. run `npm i`
 3. run `npm run dev`
 
-## End-points
+## Endpoints
 *  `GET localhost:1950/api/setup` - DB setup
 * `POST localhost:1950/api/user/login` - Login user
 * `POST localhost:1950/api/user/register` - Register user
