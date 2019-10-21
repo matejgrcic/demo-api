@@ -1,5 +1,7 @@
 # Demo api
 
+**Important:** This is proof of concept api.
+
 ## Requirements
 * Node.js
 * MongoDB
